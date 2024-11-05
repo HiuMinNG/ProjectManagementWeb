@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ProjectManagementWeb.Models.DuAn>
+
+@{
+    ViewBag.Title = "Xem tiến độ dự án";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2 style="text-align:center ; font-size:50px">Xem tiến độ dự án</h2>
+
+<p>
+    @Html.ActionLink("Create New", "TaoTienDoUser", null , new {@class = "btn btn-success"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DuAnID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayBatDau)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayKetThuc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NganSach)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DuAnID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayBatDau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayKetThuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NganSach)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditUser",null, new { id = item.DuAnID }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Details", "DetailsUser",null, new { id = item.DuAnID }, new { @class = "btn btn-success" }) 
+            
+        </td>
+    </tr>
+}
+
+</table>

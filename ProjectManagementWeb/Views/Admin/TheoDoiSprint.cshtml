@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ProjectManagementWeb.Models.Sprint>
+
+@{
+    ViewBag.Title = "TheoDoiSprint";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center">Theo Dõi Sprint</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create",null , new {@class = "btn btn-outline-success"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DuAnID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenSprint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayBatDau)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayKetThuc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DuAnID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSprint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayBatDau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayKetThuc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "SuaSprint",null, new { id=item.SprintID },new {@class = "btn btn-outline-primary"}) |
+            @Html.ActionLink("Details", "ThongTinSprint",null, new { id=item.SprintID }, new { @class = "btn btn-outline-dark" }) |
+            @Html.ActionLink("Delete", "XoaSprint",null, new { id=item.SprintID }, new { @class = "btn btn-outline-danger" })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,57 @@
+﻿@model ProjectManagementWeb.Models.Sprint
+
+@{
+    ViewBag.Title = "XoaSprintUser";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2 style="text-align:center ; font-size:50px" >Xóa Sprint</h2>
+
+<h3 style="font-size:30px; color:red ; text-align:center">Bạn có chắc chắn muốn xóa Sprint này không ?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DuAnID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DuAnID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenSprint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSprint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayBatDau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayBatDau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayKetThuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayKetThuc)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "SprintUser", null, new { @class = "btn btn-success" })
+        </div>
+    }
+</div>

@@ -1,0 +1,54 @@
+﻿@model ProjectManagementWeb.Models.Sprint
+
+@{
+    ViewBag.Title = "ThongTinSprint";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center">Thông Tin Sprint</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+
+         <td>
+                @Html.DisplayNameFor(model => model.DuAnID)
+         </td>
+      
+        <td>
+            @Html.DisplayFor(model => model.DuAnID)
+        </td>
+        <br />
+        <td>
+            @Html.DisplayNameFor(model => model.TenSprint)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.TenSprint)
+        </td>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayBatDau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayBatDau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayKetThuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayKetThuc)
+        </dd>
+       
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "TheoDoiSprint", null, new { @class = "btn btn-outline-primary" })
+    @Html.ActionLink("Edit", "SuaSprint", null, new { id = Model.SprintID }, new { @class = "btn btn-outline-warning" }) 
+
+</p>

@@ -1,0 +1,57 @@
+﻿@model ProjectManagementWeb.Models.DuAn
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center">Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DuAnID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DuAnID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayBatDau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayBatDau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayKetThuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayKetThuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NganSach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NganSach)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit",null ,new { id = Model.DuAnID }, new { @class = "btn btn-outline-danger" }) |
+    @Html.ActionLink("Back to List", "XemTienDo", null, new { @class = "btn btn-outline-success" })
+</p>

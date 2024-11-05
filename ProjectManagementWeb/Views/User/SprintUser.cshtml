@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ProjectManagementWeb.Models.Sprint>
+
+@{
+    ViewBag.Title = "SprintUser";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2 style="text-align:center ; font-size:50px">Sprint</h2>
+
+<p>
+    @Html.ActionLink("Create New", "TaoSprintUser", null , new {@class = "btn btn-success"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DuAnID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenSprint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayBatDau)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayKetThuc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DuAnID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSprint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayBatDau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayKetThuc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "SuaSprintUser",null, new { id=item.SprintID }, new {@class = "btn btn-warning"}) |
+            @Html.ActionLink("Details", "ThongTinSprintUser",null, new { id=item.SprintID }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Delete", "XoaSprintUser",null, new { id=item.SprintID }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

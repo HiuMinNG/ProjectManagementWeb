@@ -1,0 +1,51 @@
+﻿@model ProjectManagementWeb.Models.Sprint
+
+@{
+    ViewBag.Title = "ThongTinSprintUser";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>ThongTinSprintUser</h2>
+
+<div>
+    <h4>Sprint</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DuAnID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DuAnID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenSprint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSprint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayBatDau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayBatDau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayKetThuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayKetThuc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SprintID }) |
+    @Html.ActionLink("Back to List", "SprintUser")
+</p>

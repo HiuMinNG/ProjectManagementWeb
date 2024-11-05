@@ -1,0 +1,57 @@
+﻿@model ProjectManagementWeb.Models.DuAn
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2  style="text-align:center">Xóa tiến độ</h2>
+
+<h3 style="color:red">Bạn chắc chắn muốn xóa tiến độ này không?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayBatDau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayBatDau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayKetThuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayKetThuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NganSach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NganSach)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-outline-danger"  /> |
+            @Html.ActionLink("Back to List", "XemTienDo",null, new {@class = "btn btn-outline-success" })
+        </div>
+    }
+</div>
